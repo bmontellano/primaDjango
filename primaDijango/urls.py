@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from pollsTutorial import views
 
 urlpatterns = [
     path('pollsTutorial/', include('pollsTutorial.urls')),
     path('admin/', admin.site.urls),
+    path('add_post/', views.add_post),
+    path('update_post/<str:id>', views.update_post),
+    path('delete_post/<str:id>', views.delete_post),
+    path('read_post/<str:id>', views.read_post),
+    path('read_post_all', views.read_post_all)
 ]
